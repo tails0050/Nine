@@ -193,6 +193,40 @@
   }
   .lang-pill .flag{font-size:17px;}
 
+  /* SERVERS */
+  .servers-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px;}
+  .server-card{
+    display:flex; align-items:center; gap:16px;
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:20px 22px; transition:transform .18s, border-color .18s;
+  }
+  .server-card:hover{transform:translateY(-3px); border-color:rgba(255,176,102,0.4);}
+  .server-icon{
+    width:44px; height:44px; border-radius:10px; flex-shrink:0;
+    background:var(--panel-2); display:flex; align-items:center; justify-content:center;
+    font-size:20px; color:var(--orange-2);
+  }
+  .server-body h3{
+    margin:6px 0 0; font-size:19px; text-transform:uppercase; letter-spacing:0.02em;
+  }
+  .status-pill{
+    display:inline-flex; align-items:center; gap:6px;
+    font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--orange-2); background:rgba(240,136,62,0.1); border:1px solid rgba(240,136,62,0.3);
+    padding:3px 10px; border-radius:999px;
+  }
+  .status-pill::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--orange-2);}
+
+  /* TOOLS */
+  .tools-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .tools-list{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  }
+  .tools-item{padding:16px 20px; border-bottom:1px solid var(--line);}
+  .tools-item:last-child{border-bottom:none;}
+  .tools-item h4{margin:0 0 3px; font-size:15px; font-weight:600; color:var(--cream);}
+  .tools-item span{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted);}
+
   /* SOCIALS */
   .socials-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
   .scard{
@@ -266,6 +300,8 @@
     <div class="brand"><img src="data:image/webp;base64,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" alt=""> Nine</div>
     <div class="navlinks">
       <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#servers" data-i18n="nav.servers">Servers</a>
+      <a href="#tools" data-i18n="nav.tools">Tools</a>
       <a href="#translations" data-i18n="nav.translations">Translations</a>
       <a href="#socials" data-i18n="nav.socials">Socials</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -319,17 +355,63 @@
       <div class="pcard status-main">
         <div class="ptag" data-i18n="projects.tag1">✦ Main project</div>
         <h3>Ghosty</h3>
-        <p data-i18n="projects.desc1">The project getting the most attention right now — the main focus of current development time.</p>
+        <p data-i18n="projects.desc1">A bot with security features and a bunch of useful tools, built on discord.js.</p>
       </div>
       <div class="pcard status-secondary">
         <div class="ptag" data-i18n="projects.tag2">◆ Secondary project</div>
         <h3>Mr. Monkey</h3>
-        <p data-i18n="projects.desc2">Runs alongside Ghosty as the second priority build in active rotation.</p>
+        <p data-i18n="projects.desc2">Built by Digifan — I've been helping out with the Components v2 side of it.</p>
       </div>
       <div class="pcard status-third">
         <div class="ptag" data-i18n="projects.tag3">▲ Third project</div>
         <h3>Eclipse</h3>
-        <p data-i18n="projects.desc3">The third build in the lineup, picked up whenever there's room left in the schedule.</p>
+        <p data-i18n="projects.desc3">A bot Nine and I are building together, coming in English and Hungarian.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="shard-divider">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+    <polyline points="0,17 250,17 280,4 320,30 360,17 1200,17" fill="none" stroke="#4fd8e8" stroke-width="1.5" opacity="0.4"/>
+  </svg>
+</div>
+
+<section id="servers">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-i18n="servers.eyebrow">Minecraft networks</div>
+      <h2 data-i18n="servers.title">Servers</h2>
+      <p data-i18n="servers.desc">The Minecraft networks I'm currently working on — all still in development.</p>
+    </div>
+    <div class="servers-grid">
+      <div class="server-card">
+        <div class="server-icon">🖥️</div>
+        <div class="server-body">
+          <span class="status-pill" data-i18n="servers.status">In development</span>
+          <h3>CubaNetwork</h3>
+        </div>
+      </div>
+      <div class="server-card">
+        <div class="server-icon">🖥️</div>
+        <div class="server-body">
+          <span class="status-pill" data-i18n="servers.status">In development</span>
+          <h3>Zortexia</h3>
+        </div>
+      </div>
+      <div class="server-card">
+        <div class="server-icon">🖥️</div>
+        <div class="server-body">
+          <span class="status-pill" data-i18n="servers.status">In development</span>
+          <h3>Voltaris Network</h3>
+        </div>
+      </div>
+      <div class="server-card">
+        <div class="server-icon">🖥️</div>
+        <div class="server-body">
+          <span class="status-pill" data-i18n="servers.status">In development</span>
+          <h3>Elemental Network</h3>
+        </div>
       </div>
     </div>
   </div>
@@ -338,6 +420,54 @@
 <div class="shard-divider">
   <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
     <polyline points="0,14 500,14 530,28 580,6 620,14 1200,14" fill="none" stroke="#7c6cff" stroke-width="2" opacity="0.45"/>
+  </svg>
+</div>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-i18n="tools.eyebrow">My toolkit</div>
+      <h2 data-i18n="tools.title">What I use</h2>
+      <p data-i18n="tools.desc">Browsers, code editors, and languages I work with day to day.</p>
+    </div>
+    <div class="tools-grid">
+      <div>
+        <div class="ptag" style="margin-bottom:10px;" data-i18n="tools.browsers">Browsers</div>
+        <div class="tools-list">
+          <div class="tools-item"><h4>Brave</h4><span data-i18n="tools.browser1">Current main browser</span></div>
+          <div class="tools-item"><h4>Chrome</h4><span data-i18n="tools.browser2">Previously used</span></div>
+          <div class="tools-item"><h4>Arc</h4><span data-i18n="tools.browser2">Previously used</span></div>
+          <div class="tools-item"><h4>Firefox</h4><span data-i18n="tools.browser2">Previously used</span></div>
+          <div class="tools-item"><h4>Opera GX</h4><span data-i18n="tools.browser2">Previously used</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="ptag" style="margin-bottom:10px;" data-i18n="tools.editors">Code editors</div>
+        <div class="tools-list">
+          <div class="tools-item"><h4>VS Code</h4></div>
+          <div class="tools-item"><h4>PyCharm (Pro)</h4></div>
+          <div class="tools-item"><h4>IntelliJ IDEA (Pro)</h4></div>
+          <div class="tools-item"><h4>VSCodium</h4></div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:26px;">
+      <div class="ptag" style="margin-bottom:10px;" data-i18n="tools.learning">Languages I'm learning</div>
+      <div class="translations-row" style="grid-template-columns:repeat(6,1fr);">
+        <div class="tchip">Python</div>
+        <div class="tchip">Java</div>
+        <div class="tchip">TypeScript</div>
+        <div class="tchip">HTML/CSS</div>
+        <div class="tchip">C#</div>
+        <div class="tchip">JavaScript</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="shard-divider">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+    <polyline points="0,20 700,20 730,4 790,30 830,20 1200,20" fill="none" stroke="#f0883e" stroke-width="2" opacity="0.45"/>
   </svg>
 </div>
 
@@ -352,12 +482,12 @@
       <div class="pcard status-secondary">
         <div class="ptag" data-i18n="loc.tag1">◆ Plugin translations</div>
         <h3>Plugin-Translations</h3>
-        <p data-i18n="loc.desc1">Ongoing translation work across a set of plugins.</p>
+        <p data-i18n="loc.desc1">Unofficial plugin translations — covers both config files and source code.</p>
       </div>
       <div class="pcard status-main">
         <div class="ptag" data-i18n="loc.tag2">✦ Bot translations</div>
         <h3>Discord-Bot-Translations</h3>
-        <p data-i18n="loc.desc2">Ongoing translation work across a set of Discord bots.</p>
+        <p data-i18n="loc.desc2">Translating Discord bots straight from their source code.</p>
       </div>
     </div>
     <div class="translations-row">
@@ -447,6 +577,8 @@
   const translations = {
     en: {
       "nav.projects": "Projects",
+      "nav.servers": "Servers",
+      "nav.tools": "Tools",
       "nav.translations": "Translations",
       "nav.socials": "Socials",
       "nav.contact": "Contact",
@@ -457,18 +589,30 @@
       "projects.title": "Projects",
       "projects.desc": "Three active builds, ranked by how much of my time they eat.",
       "projects.tag1": "✦ Main project",
-      "projects.desc1": "The project getting the most attention right now — the main focus of current development time.",
+      "projects.desc1": "A bot with security features and a bunch of useful tools, built on discord.js.",
       "projects.tag2": "◆ Secondary project",
-      "projects.desc2": "Runs alongside Ghosty as the second priority build in active rotation.",
+      "projects.desc2": "Built by Digifan — I've been helping out with the Components v2 side of it.",
       "projects.tag3": "▲ Third project",
-      "projects.desc3": "The third build in the lineup, picked up whenever there's room left in the schedule.",
+      "projects.desc3": "A bot Nine and I are building together, coming in English and Hungarian.",
+      "servers.eyebrow": "Minecraft networks",
+      "servers.title": "Servers",
+      "servers.desc": "The Minecraft networks I'm currently working on — all still in development.",
+      "servers.status": "In development",
+      "tools.eyebrow": "My toolkit",
+      "tools.title": "What I use",
+      "tools.desc": "Browsers, code editors, and languages I work with day to day.",
+      "tools.browsers": "Browsers",
+      "tools.editors": "Code editors",
+      "tools.learning": "Languages I'm learning",
+      "tools.browser1": "Current main browser",
+      "tools.browser2": "Previously used",
       "loc.eyebrow": "Localization",
       "loc.title": "Translation work",
       "loc.desc": "Plugins and Discord bots translated into Hungarian, plus ongoing translation projects.",
       "loc.tag1": "◆ Plugin translations",
-      "loc.desc1": "Ongoing translation work across a set of plugins.",
+      "loc.desc1": "Unofficial plugin translations — covers both config files and source code.",
       "loc.tag2": "✦ Bot translations",
-      "loc.desc2": "Ongoing translation work across a set of Discord bots.",
+      "loc.desc2": "Translating Discord bots straight from their source code.",
       "socials.eyebrow": "Find me elsewhere",
       "socials.title": "Socials",
       "socials.desc": "Streams, clips, and code, spread across a few platforms.",
@@ -482,6 +626,8 @@
     },
     hu: {
       "nav.projects": "Projektek",
+      "nav.servers": "Szerverek",
+      "nav.tools": "Eszközök",
       "nav.translations": "Fordítások",
       "nav.socials": "Közösségi",
       "nav.contact": "Kapcsolat",
@@ -492,18 +638,30 @@
       "projects.title": "Projektek",
       "projects.desc": "Három aktív fejlesztés, aszerint rangsorolva, mennyi időmet eszik meg.",
       "projects.tag1": "✦ Fő projekt",
-      "projects.desc1": "A projekt, ami most a legtöbb figyelmet kapja — a jelenlegi fejlesztési idő fő fókusza.",
+      "projects.desc1": "Egy bot, ami security és pár hasznos funkcióval rendelkezik, discord.js-en futó bot.",
       "projects.tag2": "◆ Másodlagos projekt",
-      "projects.desc2": "A Ghosty mellett fut, mint a második prioritású projekt az aktív rotációban.",
+      "projects.desc2": "A Digifan által készített projekt, amiben én is besegítek a Components v2 résznél.",
       "projects.tag3": "▲ Harmadik projekt",
-      "projects.desc3": "A sor harmadik projektje, amivel akkor foglalkozom, amikor marad rá idő.",
+      "projects.desc3": "Egy Nine és általam készülőben lévő bot, ami angol és magyar nyelven lesz elérhető.",
+      "servers.eyebrow": "Minecraft hálózatok",
+      "servers.title": "Szerverek",
+      "servers.desc": "Ezeken a Minecraft szervereken dolgozom jelenleg — mindegyik fejlesztés alatt áll.",
+      "servers.status": "Fejlesztés alatt",
+      "tools.eyebrow": "A munkaeszközeim",
+      "tools.title": "Milyen programokat használok",
+      "tools.desc": "Böngészők, kód szerkesztők és nyelvek, amikkel nap mint nap dolgozom.",
+      "tools.browsers": "Böngészők",
+      "tools.editors": "Kód szerkesztők",
+      "tools.learning": "Amiket tanulok",
+      "tools.browser1": "Jelenlegi fő böngésző",
+      "tools.browser2": "Régebben használt",
       "loc.eyebrow": "Lokalizáció",
       "loc.title": "Fordítási munkák",
       "loc.desc": "Bővítmények és Discord botok magyarra fordítva, plusz folyamatban lévő fordítási projektek.",
       "loc.tag1": "◆ Bővítmény fordítások",
-      "loc.desc1": "Folyamatban lévő fordítási munka bővítmények egy csoportján.",
+      "loc.desc1": "Nem hivatalos plugin fordítások — config és forráskód alapú is.",
       "loc.tag2": "✦ Bot fordítások",
-      "loc.desc2": "Folyamatban lévő fordítási munka Discord botok egy csoportján.",
+      "loc.desc2": "Discord botok fordítása közvetlenül a forráskódjuk alapján.",
       "socials.eyebrow": "Találj meg máshol is",
       "socials.title": "Közösségi oldalak",
       "socials.desc": "Streamek, klipek és kód, néhány platformra elosztva.",
