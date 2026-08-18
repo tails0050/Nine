@@ -227,6 +227,23 @@
   .tools-item h4{margin:0 0 3px; font-size:15px; font-weight:600; color:var(--cream);}
   .tools-item span{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted);}
 
+  /* SPECS */
+  .specs-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .specs-list{
+    background:var(--panel); border:1px solid var(--line); border-radius:14px; overflow:hidden;
+  }
+  .specs-item{
+    display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+    padding:15px 20px; border-bottom:1px solid var(--line);
+  }
+  .specs-item:last-child{border-bottom:none;}
+  .specs-item .slabel2{
+    font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--muted); flex-shrink:0;
+  }
+  .specs-item .sval{font-size:14px; font-weight:600; color:var(--cream); text-align:right;}
+  .specs-item .sval .note{display:block; font-weight:400; color:var(--muted); font-size:12px; margin-top:2px;}
+
   /* SOCIALS */
   .socials-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
   .scard{
@@ -302,6 +319,7 @@
       <a href="#projects" data-i18n="nav.projects">Projects</a>
       <a href="#servers" data-i18n="nav.servers">Servers</a>
       <a href="#tools" data-i18n="nav.tools">Tools</a>
+      <a href="#specs" data-i18n="nav.specs">PC Specs</a>
       <a href="#translations" data-i18n="nav.translations">Translations</a>
       <a href="#socials" data-i18n="nav.socials">Socials</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
@@ -467,6 +485,45 @@
 
 <div class="shard-divider">
   <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
+    <polyline points="0,17 250,17 280,30 320,4 360,17 1200,17" fill="none" stroke="#7c6cff" stroke-width="2" opacity="0.4"/>
+  </svg>
+</div>
+
+<section id="specs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-i18n="specs.eyebrow">Nine's rig</div>
+      <h2 data-i18n="specs.title">PC Specs</h2>
+      <p data-i18n="specs.desc">What's inside the machine and what's plugged into it.</p>
+    </div>
+    <div class="specs-grid">
+      <div>
+        <div class="ptag" style="margin-bottom:10px;" data-i18n="specs.components">Components</div>
+        <div class="specs-list">
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.cpu">CPU</span><span class="sval">Intel Core i5-14600K</span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.cooler">CPU Cooler</span><span class="sval">ID-COOLING SE 207-XT ADVANCED</span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.mobo">Motherboard</span><span class="sval">Gigabyte B760M D3HP DDR4</span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.ram">RAM</span><span class="sval">Kingston FURY Beast 16GB DDR4</span></div>
+          <div class="specs-item"><span class="slabel2">GPU 1</span><span class="sval">Gigabyte RX 9060 XT 8GB</span></div>
+          <div class="specs-item"><span class="slabel2">GPU 2</span><span class="sval">Intel UHD Graphics 770<span class="note" data-i18n="specs.notInstalled">Not installed</span></span></div>
+        </div>
+      </div>
+      <div>
+        <div class="ptag" style="margin-bottom:10px;" data-i18n="specs.peripherals">Peripherals</div>
+        <div class="specs-list">
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.keyboard">Keyboard 1</span><span class="sval">Hama WK-300</span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.keyboard2">Keyboard 2</span><span class="sval">Trust AVONN GXT 830-RW</span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.mouse">Mouse</span><span class="sval">Spirit Of Gamer PRO-M8 Light Edition<span class="note" data-i18n="specs.black">Color: Black</span></span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.mic">Mic + Stand</span><span class="sval">Yenkee YMC 1030</span></div>
+          <div class="specs-item"><span class="slabel2" data-i18n="specs.monitor">Monitor</span><span class="sval">MSI<span class="note" data-i18n="specs.monitorNote">Not sure of the exact model — 120Hz</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="shard-divider">
+  <svg viewBox="0 0 1200 34" preserveAspectRatio="none">
     <polyline points="0,20 700,20 730,4 790,30 830,20 1200,20" fill="none" stroke="#f0883e" stroke-width="2" opacity="0.45"/>
   </svg>
 </div>
@@ -579,6 +636,7 @@
       "nav.projects": "Projects",
       "nav.servers": "Servers",
       "nav.tools": "Tools",
+      "nav.specs": "PC Specs",
       "nav.translations": "Translations",
       "nav.socials": "Socials",
       "nav.contact": "Contact",
@@ -606,6 +664,23 @@
       "tools.learning": "Languages I'm learning",
       "tools.browser1": "Current main browser",
       "tools.browser2": "Previously used",
+      "specs.eyebrow": "Nine's rig",
+      "specs.title": "PC Specs",
+      "specs.desc": "What's inside the machine and what's plugged into it.",
+      "specs.components": "Components",
+      "specs.peripherals": "Peripherals",
+      "specs.cpu": "CPU",
+      "specs.cooler": "CPU Cooler",
+      "specs.mobo": "Motherboard",
+      "specs.ram": "RAM",
+      "specs.notInstalled": "Not installed",
+      "specs.keyboard": "Keyboard 1",
+      "specs.keyboard2": "Keyboard 2",
+      "specs.mouse": "Mouse",
+      "specs.black": "Color: Black",
+      "specs.mic": "Mic + Stand",
+      "specs.monitor": "Monitor",
+      "specs.monitorNote": "Not sure of the exact model — 120Hz",
       "loc.eyebrow": "Localization",
       "loc.title": "Translation work",
       "loc.desc": "Plugins and Discord bots translated into Hungarian, plus ongoing translation projects.",
@@ -628,6 +703,7 @@
       "nav.projects": "Projektek",
       "nav.servers": "Szerverek",
       "nav.tools": "Eszközök",
+      "nav.specs": "Gép specifikáció",
       "nav.translations": "Fordítások",
       "nav.socials": "Közösségi",
       "nav.contact": "Kapcsolat",
@@ -655,6 +731,23 @@
       "tools.learning": "Amiket tanulok",
       "tools.browser1": "Jelenlegi fő böngésző",
       "tools.browser2": "Régebben használt",
+      "specs.eyebrow": "Nine gépe",
+      "specs.title": "Gép specifikáció",
+      "specs.desc": "Ami a gépben van, és ami rá van csatlakoztatva.",
+      "specs.components": "Komponensek",
+      "specs.peripherals": "Perifériák",
+      "specs.cpu": "CPU",
+      "specs.cooler": "CPU Hűtő",
+      "specs.mobo": "Alaplap",
+      "specs.ram": "RAM",
+      "specs.notInstalled": "Nincs telepítve",
+      "specs.keyboard": "Billentyűzet 1",
+      "specs.keyboard2": "Billentyűzet 2",
+      "specs.mouse": "Egér",
+      "specs.black": "Szín: Fekete",
+      "specs.mic": "Mikrofon + Állvány",
+      "specs.monitor": "Monitor",
+      "specs.monitorNote": "Nem tudom a pontos modellt — 120Hz",
       "loc.eyebrow": "Lokalizáció",
       "loc.title": "Fordítási munkák",
       "loc.desc": "Bővítmények és Discord botok magyarra fordítva, plusz folyamatban lévő fordítási projektek.",
